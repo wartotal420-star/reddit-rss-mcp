@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "reddit-rss": {
+      "command": "node",
+      "args": ["./server.js"]
+    }
+  }
+}

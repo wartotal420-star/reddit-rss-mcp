@@ -76,7 +76,7 @@ function parseAtom(xml, limit) {
       link: attr(e, 'link', 'href'),
       published: stripTags(tag(e, 'published') || tag(e, 'updated')),
       id: stripTags(tag(e, 'id')),
-      subreddit: decodeEntities(stripTags(tag(e, 'category') ? attr(e, 'category', 'label') : '')),
+      subreddit: decodeEntities(attr(e, 'category', 'label')),
       excerpt: stripTags(contentHtml).slice(0, 500),
     };
     entries.push(item);

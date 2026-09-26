@@ -24,7 +24,7 @@ Requires Node.js 18+ (uses the built-in `fetch`). No `npm install` needed.
 
 ### Claude Desktop / Claude Code
 
-Add to your MCP config (`claude_desktop_config.json`, or `~/.claude/settings.json` for Claude Code).
+Add to your MCP config (`claude_desktop_config.json` for Claude Desktop; for Claude Code use `claude mcp add` or a `.mcp.json`, see below).
 
 Run directly from GitHub (no install step):
 
@@ -33,7 +33,7 @@ Run directly from GitHub (no install step):
   "mcpServers": {
     "reddit-rss": {
       "command": "npx",
-      "args": ["-y", "github:ninjackster/reddit-rss-mcp"]
+      "args": ["-y", "github:wartotal420-star/reddit-rss-mcp"]
     }
   }
 }
@@ -53,6 +53,14 @@ Or run from a local clone:
 ```
 
 Restart the app (quit fully, then relaunch) to load the server.
+
+### Claude Code (inside this repo)
+
+This repo ships a project-scoped `.mcp.json`, so opening Claude Code in the repo root picks up the `reddit-rss` server automatically (approve it when prompted, then check with `/mcp`). To make it available in every project instead:
+
+```bash
+claude mcp add --scope user reddit-rss -- npx -y github:wartotal420-star/reddit-rss-mcp
+```
 
 ## Usage examples
 
